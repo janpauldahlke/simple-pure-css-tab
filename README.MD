@@ -1,5 +1,12 @@
-2do:
+##a small exmample for a pure css tab container
+### run npm install
+### run gulp each time you want to compile less/ there is no watcher! 
 
-prequisites: 
-LESS Lib
-1. index.html / styles.css
+
+
+
+#####steps
+- make markup
+- style it rudimental
+- check mdn if you have questions about :not || :target selectors
+- enjoy
