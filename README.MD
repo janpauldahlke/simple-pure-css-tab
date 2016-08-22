@@ -10,3 +10,6 @@
 - style it rudimental
 - check mdn if you have questions about :not || :target selectors
 - enjoy
+
+codepen:
+`http://codepen.io/paulq/pen/BxGhe/`
