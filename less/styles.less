@@ -1,0 +1,71 @@
+body{
+	background:#500;
+
+}
+
+//generell rules
+
+.wrap{
+  /*min-h, pos:rel, width: 805/, center via margin; */
+  min-height: 300px;
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+
+	div{
+    /* color, display:inline*/
+    background-color: #fff;
+    display: inline-block; /*abuse empty linefeed. alternativ inline but this makes me fight against border */
+		a{
+      /*prevent link standart*/
+  		text-decoration: none;
+  		color:#000;
+  		font-size: 20px;
+  		line-height: 24px;
+      text-align: center;
+      border: 1px red solid;
+      background: red;
+    }
+  /*
+  vorher einmal testen? color all :not(p);
+  https://developer.mozilla.org/en/docs/Web/CSS/:not
+   */
+    
+    /*make all non targets white */
+    &:not(:target){
+     /*whic target ? defgine here*/ 
+      a{
+        background: white;
+      }
+     }
+     /*dazu muss #tab1 im href gepflegt sein href=id des containers*/ 
+    &:target{
+     a{
+       background: green; 
+      }
+    }
+      /*nested div content */
+      div{
+        z-index: -2;
+        left:0;
+        top:20px;
+        bottom:0;
+        right: 0;
+        padding:20px;
+        border:solid green 1px;
+      }
+      /* where the :not magic occurs;*/
+      &:not(:target){
+        div{
+          position: absolute;
+        }
+      }
+      &:target{
+        div{
+          position: absolute;
+          z-index: -1;
+        }
+      };   
+  }
+}
+

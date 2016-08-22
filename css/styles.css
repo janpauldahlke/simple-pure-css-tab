@@ -1,0 +1,59 @@
+body {
+  background: #500;
+}
+.wrap {
+  /*min-h, pos:rel, width: 805/, center via margin; */
+  min-height: 300px;
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+}
+.wrap div {
+  /* color, display:inline*/
+  background-color: #fff;
+  display: inline-block;
+  /*abuse empty linefeed. alternativ inline but this makes me fight against border */
+  /*
+  vorher einmal testen? color all :not(p);
+  https://developer.mozilla.org/en/docs/Web/CSS/:not
+   */
+  /*make all non targets white */
+  /*dazu muss #tab1 im href gepflegt sein href=id des containers*/
+  /*nested div content */
+  /* where the :not magic occurs;*/
+}
+.wrap div a {
+  /*prevent link standart*/
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  border: 1px red solid;
+  background: red;
+}
+.wrap div:not(:target) {
+  /*whic target ? defgine here*/
+}
+.wrap div:not(:target) a {
+  background: white;
+}
+.wrap div:target a {
+  background: green;
+}
+.wrap div div {
+  z-index: -2;
+  left: 0;
+  top: 20px;
+  bottom: 0;
+  right: 0;
+  padding: 20px;
+  border: solid green 1px;
+}
+.wrap div:not(:target) div {
+  position: absolute;
+}
+.wrap div:target div {
+  position: absolute;
+  z-index: -1;
+}
